@@ -4,7 +4,7 @@
 # In[ ]:
 
 
-pip install pandas==1.0.1
+#pip install pandas==1.0.1
 
 
 # In[ ]:
@@ -36,7 +36,7 @@ warnings.filterwarnings("ignore")
 # In[2]:
 
 
-tracking_uri='file:///root/mlflow/runs'
+tracking_uri='file:///root/mlflow'
 mlflow.set_tracking_uri(tracking_uri)
 
 experiment_name = 'wine'
