@@ -7,9 +7,7 @@ interface between the steps, as well as allowing for caching and reuse
 of the intermediate results.
 
 At a high level, our goal is to predict users' ratings of movie given
-a history of their ratings for other movies. This example is based
-on `this webinar <https://databricks.com/blog/2018/07/13/scalable-end-to-end-deep-learning-using-tensorflow-and-databricks-on-demand-webinar-and-faq-now-available.html>`_
-by @brookewenig and @smurching.
+a history of their ratings for other movies.
 
 .. image:: img/mlflow-feature-eng-spark-training-keras.png?raw=true
 
@@ -42,13 +40,10 @@ reuse the cached results.
 Running this Example
 ^^^^^^^^^^^^^^^^^^^^
 In order for the multistep workflow to find the other steps, you must
-execute ``mlflow run`` from this directory. So, in order to find out if
-the Keras model does in fact improve upon the ALS model, you can simply
-run:
+execute ``mlflow run`` from this directory.  Simply run the following:
 
 .. code-block:: bash
 
-    cd examples/multistep_workflow
     mlflow run .
 
 
