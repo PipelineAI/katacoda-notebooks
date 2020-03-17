@@ -25,7 +25,7 @@ import mlflow.keras
 # In[ ]:
 
 
-tracking_uri='file:///mnt/pipelineai/users/experiments'
+tracking_uri='file:///root/mlflow'
 mlflow.set_tracking_uri(tracking_uri)
 
 experiment_name = 'reuters'
