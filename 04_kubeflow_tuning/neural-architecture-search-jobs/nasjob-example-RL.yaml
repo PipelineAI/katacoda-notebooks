@@ -11,7 +11,7 @@ metadata:
   name: nas-rl-example
 spec:
   parallelTrialCount: 2
-  maxTrialCount: 4
+  maxTrialCount: 2
   maxFailedTrialCount: 1
   objective:
     type: maximize
