@@ -7,7 +7,7 @@ from mlflow import log_metric, log_param, log_artifacts
 tracking_uri='file:///root/mlflow'
 mlflow.set_tracking_uri(tracking_uri)
 
-experiment_name = 'hellow_world'
+experiment_name = 'hello_world'
 mlflow.set_experiment(experiment_name)  
 
 if __name__ == "__main__":
