@@ -10,9 +10,9 @@ kind: Experiment
 metadata:
   name: nas-rl-example
 spec:
-  parallelTrialCount: 3
-  maxTrialCount: 12
-  maxFailedTrialCount: 3
+  parallelTrialCount: 2
+  maxTrialCount: 4
+  maxFailedTrialCount: 1
   objective:
     type: maximize
     goal: 0.99
