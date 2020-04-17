@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
-
-
 '''Trains and evaluate a simple MLP
 on the Reuters newswire topic classification task.
 '''
@@ -22,9 +19,6 @@ import mlflow.keras
 
 # # Setup Experiment Tracker
 
-# In[ ]:
-
-
 tracking_uri='file:///root/mlflow'
 mlflow.set_tracking_uri(tracking_uri)
 
@@ -35,9 +29,6 @@ mlflow.keras.autolog()
 
 
 # # Load the Training Data
-
-# In[ ]:
-
 
 max_words = 1000
 batch_size = 32
@@ -81,9 +72,6 @@ model.compile(loss='categorical_crossentropy',
 
 # # Start Training Run
 
-# In[ ]:
-
-
 with mlflow.start_run():
     history = model.fit(x_train, y_train,
                     batch_size=batch_size,
@@ -94,13 +82,3 @@ with mlflow.start_run():
                        batch_size=batch_size, verbose=1)
     print('Test score:', score[0])
     print('Test accuracy:', score[1])
-
-
-# # Check the MLflow Pipelines Tab
-# ![MLflow Pipeline](https://raw.githubusercontent.com/PipelineAI/site/master/assets/img/mlflow-pipeline2.png)
-
-# In[ ]:
-
-
-
-
