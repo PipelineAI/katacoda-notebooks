@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
-
-
 '''Trains and evaluate a simple MLP
 on the Reuters newswire topic classification task.
 '''
@@ -20,9 +17,6 @@ from mlflow import pyfunc
 
 # # Setup Experiment Tracker
 
-# In[ ]:
-
-
 tracking_uri='file:///root/mlflow'
 mlflow.set_tracking_uri(tracking_uri)
 
@@ -34,9 +28,6 @@ mlflow.tensorflow.autolog()
 
 
 # # Import Training Data 
-
-# In[ ]:
-
 
 # Builds, trains and evaluates a tf.estimator. Then, exports it for inference, logs the exported model
 # with MLflow, and loads the fitted model back as a PyFunc to make predictions.
@@ -53,9 +44,6 @@ train_input_fn = tf.estimator.inputs.numpy_input_fn({"features": x_train}, y_tra
 
 
 # # Start Training Run
-
-# In[ ]:
-
 
 with mlflow.start_run() as run:
     mlflow.log_param("Hidden Units", hidden_units)
@@ -79,9 +67,6 @@ with mlflow.start_run() as run:
 
 # # Predict with the Model
 
-# In[ ]:
-
-
 # Resume the run by passing run id from above
 with mlflow.start_run(run_id=run.info.run_id) as run:
     # Reload the model and predict
@@ -92,13 +77,3 @@ with mlflow.start_run(run_id=run.info.run_id) as run:
     predict_df = pyfunc_model.predict(df)
     predict_df['original_labels'] = y_test
     print(predict_df)
-
-
-# # Check the MLflow Pipelines Tab
-# ![MLflow Pipeline](https://raw.githubusercontent.com/PipelineAI/site/master/assets/img/mlflow-pipeline3.png)
-
-# In[ ]:
-
-
-
-
