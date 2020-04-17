@@ -1,15 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
-
-
-#pip install pandas==1.0.1
-
-
-# In[ ]:
-
-
 # The data set used in this example is from http://archive.ics.uci.edu/ml/datasets/Wine+Quality
 # P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis.
 # Modeling wine preferences by data mining from physicochemical properties. In Decision Support Systems, Elsevier, 47(4):547-553, 2009.
@@ -33,9 +24,6 @@ warnings.filterwarnings("ignore")
 
 # # Setup Experiment Tracker
 
-# In[2]:
-
-
 tracking_uri='file:///root/mlflow'
 mlflow.set_tracking_uri(tracking_uri)
 
@@ -44,9 +32,6 @@ mlflow.set_experiment(experiment_name)
 
 
 # # Import Training Data
-
-# In[ ]:
-
 
 # Read the wine-quality csv file (make sure you're running this from the root of MLflow!)
 wine_path = './datasets/wine-quality.csv'
@@ -64,15 +49,8 @@ test_y = test[["quality"]]
 
 # # Start Training Run
 
-# In[ ]:
-
-
 alpha = 0.20
 l1_ratio = 0.20
-
-
-# In[ ]:
-
 
 with mlflow.start_run() as run:
     lr = ElasticNet(alpha=alpha, l1_ratio=l1_ratio, random_state=42)
@@ -100,13 +78,3 @@ with mlflow.start_run() as run:
 
     # Log Model
     mlflow.sklearn.log_model(lr, "model")
-
-
-# # Check the MLflow Pipelines Tab
-# ![MLflow Pipeline](https://raw.githubusercontent.com/PipelineAI/site/master/assets/img/mlflow-pipeline.png)
-
-# In[ ]:
-
-
-
-
