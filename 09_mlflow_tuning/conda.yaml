@@ -9,7 +9,7 @@ dependencies:
   - matplotlib=2.2.2
   - keras==2.2.2
   - pip:
-    - mlflow>=1.0
+    - mlflow==1.7.2
     - Gpy==1.9.2
     - GpyOpt==1.2.5
     - pyDOE==0.3.8
