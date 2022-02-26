@@ -4,4 +4,4 @@ pyspark
 #requests
 click
 #kubernetes==10.0.0
-mlflow==1.2.0
+mlflow==1.23.1
